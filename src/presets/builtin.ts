@@ -1,0 +1,152 @@
+import type { Preset } from './import';
+
+const G = '內建';
+
+export const BUILTIN: Preset[] = [
+  {
+    id: 'b-natural',
+    name: '自然增艷',
+    group: G,
+    builtin: true,
+    settings: { contrast: 12, highlights: -25, shadows: 20, whites: 8, blacks: -8, clarity: 8, vibrance: 22 },
+  },
+  {
+    id: 'b-warm-film',
+    name: '暖調膠片',
+    group: G,
+    builtin: true,
+    settings: {
+      temp: 12,
+      contrast: 8,
+      highlights: -30,
+      shadows: 18,
+      vibrance: 10,
+      saturation: -8,
+      curves: {
+        rgb: [
+          [0, 0.06],
+          [0.25, 0.24],
+          [0.75, 0.78],
+          [1, 0.96],
+        ],
+        r: [
+          [0, 0],
+          [1, 1],
+        ],
+        g: [
+          [0, 0],
+          [1, 1],
+        ],
+        b: [
+          [0, 0.03],
+          [1, 0.95],
+        ],
+      },
+      gradeShadows: { h: 215, s: 12, l: 0 },
+      gradeHighlights: { h: 42, s: 18, l: 0 },
+      grain: 22,
+      grainSize: 30,
+    },
+  },
+  {
+    id: 'b-teal-orange',
+    name: '青橙電影',
+    group: G,
+    builtin: true,
+    settings: {
+      contrast: 18,
+      highlights: -20,
+      shadows: 12,
+      vibrance: 15,
+      hslHue: [0, -8, -15, 20, 10, -10, 0, 0],
+      hslSat: [0, 15, -20, -35, 5, 10, -20, -20],
+      gradeShadows: { h: 195, s: 22, l: 0 },
+      gradeHighlights: { h: 35, s: 20, l: 0 },
+      gradeBalance: 10,
+      vignette: -12,
+    },
+  },
+  {
+    id: 'b-matte',
+    name: '褪色消光',
+    group: G,
+    builtin: true,
+    settings: {
+      contrast: -10,
+      highlights: -15,
+      shadows: 25,
+      saturation: -15,
+      curves: {
+        rgb: [
+          [0, 0.12],
+          [0.2, 0.22],
+          [0.7, 0.72],
+          [1, 0.94],
+        ],
+        r: [
+          [0, 0],
+          [1, 1],
+        ],
+        g: [
+          [0, 0],
+          [1, 1],
+        ],
+        b: [
+          [0, 0],
+          [1, 1],
+        ],
+      },
+    },
+  },
+  {
+    id: 'b-portrait',
+    name: '柔和人像',
+    group: G,
+    builtin: true,
+    settings: {
+      exposure: 0.15,
+      contrast: -5,
+      highlights: -20,
+      shadows: 15,
+      texture: -15,
+      clarity: -8,
+      vibrance: 12,
+      hslSat: [0, -6, 0, -10, 0, 0, 0, 0],
+      hslLum: [0, 12, 0, 0, 0, 0, 0, 0],
+    },
+  },
+  {
+    id: 'b-cool',
+    name: '冷調清透',
+    group: G,
+    builtin: true,
+    settings: {
+      temp: -12,
+      contrast: 10,
+      highlights: -15,
+      whites: 10,
+      dehaze: 8,
+      vibrance: 12,
+      hslSat: [0, 0, 0, -10, 10, 12, 0, 0],
+      gradeShadows: { h: 220, s: 10, l: 0 },
+    },
+  },
+  {
+    id: 'b-bw',
+    name: '高對比黑白',
+    group: G,
+    builtin: true,
+    settings: {
+      bw: true,
+      contrast: 35,
+      highlights: -15,
+      shadows: 10,
+      whites: 12,
+      blacks: -18,
+      clarity: 18,
+      bwMix: [10, 20, 10, -10, -20, -35, 0, 0],
+      grain: 25,
+      vignette: -15,
+    },
+  },
+];
